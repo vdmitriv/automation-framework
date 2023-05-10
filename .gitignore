@@ -40,3 +40,5 @@ build/
 /.idea/.gitignore
 /.idea/misc.xml
 /.idea/vcs.xml
+/.idea/uiDesigner.xml
+/Screenshots/*
