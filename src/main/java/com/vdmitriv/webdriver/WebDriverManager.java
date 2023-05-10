@@ -10,17 +10,17 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class WebDriverManager {
 
-    private WebDriver driver;
+    private static WebDriver driverInstance;
 
-    public WebDriver getDriver(){
-        if(this.driver == null) {
-            this.driver = initDriver();
+    public static WebDriver getDriver(){
+        if(driverInstance == null) {
+            driverInstance = initDriver();
         }
 
-        return this.driver;
+        return driverInstance;
     }
 
-    private WebDriver initDriver() {
+    private static WebDriver initDriver() {
         switch (ConfigUtil.getBrowser()){
             case "Chrome":
                 return initChromeDriver();
@@ -31,19 +31,19 @@ public class WebDriverManager {
         }
     }
 
-    private FirefoxDriver initFireFoxDriver() {
+    private static FirefoxDriver initFireFoxDriver() {
         FirefoxOptions options = new FirefoxOptions();
         return new FirefoxDriver(options);
     }
 
-    private ChromeDriver initChromeDriver(){
+    private static ChromeDriver initChromeDriver(){
         ChromeOptions options = new ChromeOptions();
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         return new ChromeDriver(options);
     }
 
-    public void quitDriver(){
-        driver.quit();
+    public static void quitDriver(){
+        driverInstance.quit();
     }
 
 }
