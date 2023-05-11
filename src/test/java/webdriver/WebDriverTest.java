@@ -17,8 +17,8 @@ public class WebDriverTest {
 
         driver.navigate().to("https://www.google.com/");
 
-        driver.findElement(By.name("q")).sendKeys("selenium");
-        driver.findElement(By.name("btnI")).click();
+//        driver.findElement(By.name("q")).sendKeys("selenium");
+//        driver.findElement(By.name("btnI")).click();
 
     }
 
