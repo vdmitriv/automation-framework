@@ -19,4 +19,8 @@ public class ConfigUtil {
     public static String getBrowser(){
         return props.getProperty("browser.name");
     }
+
+    public static String getRemoteDriverUrl(){
+        return props.getProperty("remote.driver.url");
+    }
 }
